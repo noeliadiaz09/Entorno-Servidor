@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CalculadoraIMCController;
+use App\Http\Controllers\CalculadoraOperacionesBasicasController;
 use App\Http\Controllers\SorteoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolaController;
@@ -19,3 +20,7 @@ Route::get('/sorteo/numero/{num?}', [SorteoController::class, "numero"])->name("
 //Actividad Examen 23/24
 //Apartado 1
 Route::get("/calcularimc/{peso}/{alturaCm}", [CalculadoraIMCController::class, "calculadoraImc"])->name("calcularimc");
+
+//Ejercicios Refuerzo
+//Refuerzo 1
+Route::get('/calculate/{num1}/{num2}/{operation}', [CalculadoraOperacionesBasicasController::class, "calcular"])->name("calcularBasico");
