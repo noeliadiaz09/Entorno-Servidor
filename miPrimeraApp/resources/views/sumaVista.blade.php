@@ -1,0 +1,1 @@
+<p>El resultado de la suma de {{ $num1 }} y {{ $num2 }} es: {{ $resultado }}</p>

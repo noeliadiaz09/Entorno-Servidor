@@ -1,0 +1,1 @@
+<p>El número aleatorio es: {{ $aleatorio }}</p>
