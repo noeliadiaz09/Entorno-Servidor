@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CalculadoraIMCController;
 use App\Http\Controllers\CalculadoraOperacionesBasicasController;
+use App\Http\Controllers\ItemController;
 use App\Http\Controllers\SorteoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolaController;
@@ -24,3 +25,6 @@ Route::get("/calcularimc/{peso}/{alturaCm}", [CalculadoraIMCController::class, "
 //Ejercicios Refuerzo
 //Refuerzo 1
 Route::get('/calculate/{num1}/{num2}/{operation}', [CalculadoraOperacionesBasicasController::class, "calcular"])->name("calcularBasico");
+
+//Refuerzo 2
+Route::get('/listar', [ItemController::class, "listarElementos"]);
