@@ -28,3 +28,6 @@ Route::get('/calculate/{num1}/{num2}/{operation}', [CalculadoraOperacionesBasica
 
 //Refuerzo 2
 Route::get('/listar', [ItemController::class, "listarElementos"]);
+
+//Refuerzo 3
+Route::get('/items/{id}', [ItemController::class, "detalleItem"]);

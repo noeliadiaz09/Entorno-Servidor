@@ -8,12 +8,10 @@
 </head>
 
 <body>
-    <h1>Mostrar una Lista de Elementos</h1>
-    <ul>
-        @foreach ($items as $id => $item)
-            <li>{{ $item }}</li>
-        @endforeach
-    </ul>
+    <h1>Detalle del elemento</h1>
+
+    <p>Índice: {{ $id }}</p>
+    <p>Elemento seleccionado: {{ $item }}</p>
 </body>
 
 </html>
