@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalculadoraIMCController;
 use App\Http\Controllers\SorteoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolaController;
@@ -14,3 +15,7 @@ Route::get('/suma/{num1?}/{num2?}', [CalculadoraController::class, "sumarPorDefe
 
 //Actividad 5.3
 Route::get('/sorteo/numero/{num?}', [SorteoController::class, "numero"])->name("sorteoAleatorio");
+
+//Actividad Examen 23/24
+//Apartado 1
+Route::get("/calcularimc/{peso}/{alturaCm}", [CalculadoraIMCController::class, "calculadoraImc"])->name("calcularimc");
