@@ -18,7 +18,7 @@ class CalculadoraOperacionesBasicasController extends Controller
             case "*":
                 $resultado = $num1 * $num2;
                 break;
-            case "/":
+            case "%":
                 $resultado = $num1 / $num2;
                 break;
             default:

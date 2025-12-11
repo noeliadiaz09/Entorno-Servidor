@@ -8,12 +8,10 @@
 </head>
 
 <body>
-    <h1>Mostrar una Lista de Elementos</h1>
-    <ul>
-        @foreach ($items as $item)
-            <li>{{ $item }}</li>
-        @endforeach
-    </ul>
+    <h1>Mostrar el formulario de HolaController</h1>
+    <p>Email: {{ $email }}</p>
+    <p>Asunto: {{ $asunto }}</p>
+    <p>Contenido del mensaje: {{ $contenido }}</p>
 </body>
 
 </html>

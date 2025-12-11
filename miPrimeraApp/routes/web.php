@@ -31,3 +31,7 @@ Route::get('/listar', [ItemController::class, "listarElementos"]);
 
 //Refuerzo 3
 Route::get('/items/{id}', [ItemController::class, "detalleItem"]);
+
+//Formulario de ejemplo
+Route::get('/formulario', [HolaController::class, 'form'])->name("formulario");
+Route::post('/procesado', [HolaController::class, 'procesar'])->name('procesarForm');

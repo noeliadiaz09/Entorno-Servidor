@@ -14,4 +14,18 @@ class HolaController extends Controller
     {
         return view('holaVista', ['nombre' => $nombre]);
     }
+
+    function form()
+    {
+        return view('form');
+    }
+
+    public function procesar(Request $r)
+    {
+        $email = $r->get("email");
+        $asunto = $r->get("asunto");
+        $contenido = $r->get("contenido");
+
+        return view("resultFormVista", ["email" => $email, "asunto" => $asunto, "contenido" => $contenido]);
+    }
 }
