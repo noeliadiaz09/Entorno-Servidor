@@ -22,6 +22,11 @@ class HolaController extends Controller
 
     public function procesar(Request $r)
     {
+        $r->validate([
+            'email' => 'required|email',
+            'asunto' => 'required'
+        ]);
+
         $email = $r->get("email");
         $asunto = $r->get("asunto");
         $contenido = $r->get("contenido");

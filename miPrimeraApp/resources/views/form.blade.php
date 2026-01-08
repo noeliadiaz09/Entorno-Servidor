@@ -12,6 +12,11 @@
     <form method="POST" action="{{ route('procesarForm') }}">
         <!-- Para evitar ataques CSRF -->
         @csrf
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        @endif
 
         Email: <input type="email" name="email">
         <br>
