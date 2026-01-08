@@ -7,6 +7,8 @@ use App\Http\Controllers\SorteoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolaController;
 use App\Http\Controllers\CalculadoraController;
+use App\Http\Controllers\UserController;
+
 
 Route::get('/hola', [HolaController::class, 'index']);
 Route::get('/hola/{nombre}', [HolaController::class, 'show'])->name('holaConNombre');
@@ -35,3 +37,7 @@ Route::get('/items/{id}', [ItemController::class, "detalleItem"]);
 //Formulario de ejemplo
 Route::get('/formulario', [HolaController::class, 'form'])->name("formulario");
 Route::post('/procesado', [HolaController::class, 'procesar'])->name('procesarForm');
+
+//Refuerzo 8
+Route::get('/refuerzo8', [UserController::class, 'showForm'])->name("formulario8");
+Route::post('/refuerzo8', [UserController::class, 'storeName'])->name('guardarNombre');
