@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\CalculadoraAmpliadaController;
 use App\Http\Controllers\CalculadoraIMCController;
 use App\Http\Controllers\CalculadoraOperacionesBasicasController;
 use App\Http\Controllers\ItemController;
@@ -41,3 +43,10 @@ Route::post('/procesado', [HolaController::class, 'procesar'])->name('procesarFo
 //Refuerzo 8
 Route::get('/refuerzo8', [UserController::class, 'showForm'])->name("formulario8");
 Route::post('/refuerzo8', [UserController::class, 'storeName'])->name('guardarNombre');
+
+//Refuerzo 10
+Route::get('/refuerzo10', [CalculadoraAmpliadaController::class, 'showFormRefuerzo10'])->name("formulario10");
+Route::post('/refuerzo10', [CalculadoraAmpliadaController::class, 'procesarFormRefuerzo10'])->name('procesarOperacion');
+
+//Pruebas BD
+Route::get('/crearArt', [ArticleController::class, 'crearArticulo'])->name("crearArticulo");
