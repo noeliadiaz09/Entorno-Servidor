@@ -17,18 +17,19 @@
         @endif
         @csrf
 
-        Numero 1: <input type="number" name="num1"><br>
-        Numero 2: <input type="number" name="num2"><br>
+        Numero 1: <input type="text" name="num1" value="{{ old('num1') }}"><br>
+        Numero 2: <input type="text" name="num2" value="{{ old('num2') }}"><br>
         <select name="operador">
             <option value="suma">+</option>
             <option value="resta">-</option>
             <option value="multiplicacion">x</option>
             <option value="division">/</option>
+            <option value="potencia">^</option>
         </select>
         <input type="submit">
     </form>
 
-     @isset($resultado)
+    @isset($resultado)
         <h2>Resultado: {{ $resultado }}</h2>
     @endisset
 

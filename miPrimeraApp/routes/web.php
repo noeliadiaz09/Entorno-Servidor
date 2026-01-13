@@ -50,3 +50,7 @@ Route::post('/refuerzo10', [CalculadoraAmpliadaController::class, 'procesarFormR
 
 //Pruebas BD
 Route::get('/crearArt', [ArticleController::class, 'crearArticulo'])->name("crearArticulo");
+
+//Pruebas BD con formulario
+Route::get('/guardarArt', [ArticleController::class, 'showFormArticulo'])->name("insertarArticulo");
+Route::post('/guardarArt', [ArticleController::class, 'procesarFormArticulo'])->name("procesarArticulo");

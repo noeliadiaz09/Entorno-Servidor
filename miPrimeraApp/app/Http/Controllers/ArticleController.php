@@ -18,4 +18,18 @@ class ArticleController extends Controller
         $art->views = 333;
         $art->save();
     }
+
+    public function showFormArticulo()
+    {
+        return view("formBase");
+    }
+
+    public function procesarFormArticulo(Request $r)
+    {
+        $r->validate([
+            "titulo" => "required|string",
+            "contenido" => "required|string",
+            ...
+        ]);
+    }
 }

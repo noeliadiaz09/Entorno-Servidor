@@ -15,8 +15,8 @@ class CalculadoraAmpliadaController extends Controller
     {
 
         $r->validate([
-            "num1" => "required|integer",
-            "num2" => "required|integer"
+            "num1" => "required|numeric",
+            "num2" => "required|numeric"
         ]);
 
         $num1 = $r->get("num1");
@@ -36,6 +36,8 @@ class CalculadoraAmpliadaController extends Controller
             case "division":
                 $resultado = $num1 / $num2;
                 break;
+            case "potencia":
+                $resultado = $num1 ** $num2;
         }
 
         return view("refuerzo10Form", ["resultado" => $resultado]);
