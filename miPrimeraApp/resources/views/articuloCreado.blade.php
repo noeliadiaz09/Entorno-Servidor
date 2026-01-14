@@ -1,0 +1,1 @@
+<h1>El articulo se ha creado correctamente {{ $articulo->title }}</h1>

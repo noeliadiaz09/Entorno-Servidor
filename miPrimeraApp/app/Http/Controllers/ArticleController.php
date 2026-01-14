@@ -27,9 +27,40 @@ class ArticleController extends Controller
     public function procesarFormArticulo(Request $r)
     {
         $r->validate([
-            "titulo" => "required|string",
-            "contenido" => "required|string",
-            ...
+            "title" => "required|string",
+            "content" => "required|string",
+            "publish_date" => "required|date",
+            "category" => "nullable|string",
+            "views" => "integer"
         ]);
+
+        //De esta manera se hace automáticamente lo comentado abajo
+        $art = Article::create($r->all());
+
+        // $art = new Article();
+        // $art->title = $r->get("title");
+        // $art->content = $r->get("content");
+        // $art->publish_date = $r->get("publish_date");
+        // $art->category = $r->get("category");
+        // $art->views = $r->get("views");
+
+        // //Guardar en la base de datos
+        // $art->save();
+
+        return view("articuloCreado", ["articulo" => $art]);
     }
+
+    public function listarArticulos()
+    {
+        //Listar todos los articulo
+        // $articulosList = Article::all();
+
+        //Listar solo artículos de más de 300 visitas
+        $articulosList = Article::where("views", ">", 1000)->get();
+
+        return view("listadoArticulo", ["articuloList" => $articulosList]);
+    }
+
+
+
 }

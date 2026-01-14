@@ -9,11 +9,19 @@
 
 <body>
     <form action="{{ route('procesarArticulo') }}" method="POST">
-        Titulo: <input type="text" name="titulo"><br>
-        Contenido: <input type="text" name="contenido"><br>
-        Fecha: <input type="date" name="fecha"><br>
-        Categoría: <input type="text" name="categoria"><br>
-        Visitas: <input type="number" name="visitas"><br>
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                {{ $error }}<br>
+            @endforeach
+        @endif
+        @csrf
+
+        Titulo: <input type="text" name="title"><br>
+        Contenido: <input type="text" name="content"><br>
+        Fecha: <input type="date" name="publish_date"><br>
+        Categoría: <input type="text" name="category"><br>
+        Visitas: <input type="number" name="views"><br>
         <input type="submit" name="enviar" value="Guardar Articulo">
     </form>
 </body>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CalculadoraAmpliadaController;
 use App\Http\Controllers\CalculadoraIMCController;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HolaController;
 use App\Http\Controllers\CalculadoraController;
 use App\Http\Controllers\UserController;
+
 
 
 Route::get('/hola', [HolaController::class, 'index']);
@@ -52,5 +54,13 @@ Route::post('/refuerzo10', [CalculadoraAmpliadaController::class, 'procesarFormR
 Route::get('/crearArt', [ArticleController::class, 'crearArticulo'])->name("crearArticulo");
 
 //Pruebas BD con formulario
-Route::get('/guardarArt', [ArticleController::class, 'showFormArticulo'])->name("insertarArticulo");
+Route::get('/guardarArt', action: [ArticleController::class, 'showFormArticulo'])->name("insertarArticulo");
 Route::post('/guardarArt', [ArticleController::class, 'procesarFormArticulo'])->name("procesarArticulo");
+
+//Prueba de BD Consultas
+//---Listar Articulos---
+Route::get('/listarArticulos', action: [ArticleController::class, 'listarArticulos'])->name("listarArticulos");
+
+//Actividad 5.11
+Route::get('/producto', [ProductoController::class, 'showFormProducto'])->name("insertarProducto");
+Route::post('/producto', [ProductoController::class, 'procesarFormProducto'])->name("procesarProducto");
