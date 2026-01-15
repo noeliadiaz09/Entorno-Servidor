@@ -64,3 +64,10 @@ Route::get('/listarArticulos', action: [ArticleController::class, 'listarArticul
 //Actividad 5.11
 Route::get('/producto', [ProductoController::class, 'showFormProducto'])->name("insertarProducto");
 Route::post('/producto', [ProductoController::class, 'procesarFormProducto'])->name("procesarProducto");
+//Actividad 5.12
+Route::get('/producto/borrar/{id}', [ProductoController::class, 'borrarProductos'])->name("borrarProductos");
+Route::get('/producto/modificar/{id}', [ProductoController::class, 'modificarProductos'])->name("modificarProductos");
+Route::get('/productos/listar', [ProductoController::class, 'tablasProductos'])->name("borrarProductos");
+
+//Actividad 5.14
+Route::get('/producto/modificar/{id}', [ProductoController::class, 'actualizarProducto'])->name("actualizarProducto");

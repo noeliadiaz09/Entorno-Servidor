@@ -25,4 +25,22 @@ class ProductoController extends Controller
 
         return view("insertadoExitosoProducto", ["prod" => $prod]);
     }
+
+    public function borrarProductos($id)
+    {
+        $prod = Producto::find($id);
+        $prod->delete();
+        return redirect()->route("tablasProducto");
+    }
+
+    public function modificarProducto($id)
+    {
+
+    }
+
+    public function actualizarProducto($id)
+    {
+        $prod = Producto::find($id);
+        return view("formActualizarProducto", ["prod" => $prod]);
+    }
 }

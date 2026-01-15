@@ -17,11 +17,11 @@
 
         @csrf
 
-        Nombre: <input type="text" name="nombre"><br>
-        Descripción: <input type="text" name="descripcion"><br>
-        Precio: <input type="text" name="precio"><br>
-        Stock: <input type="number" name="stock"><br>
-        <input type="submit" value="Insertar">
+        Nombre: <input type="text" name="nombre" value="{{$prod->nombre}}"><br>
+        Descripción: <input type="text" name="descripcion" value="{{$prod->descripcion}}"><br>
+        Precio: <input type="text" name="precio" value="{{$prod->precio}}"><br>
+        Stock: <input type="number" name="stock" value="{{$prod->stock}}"><br>
+        <input type="submit" value="Actualizar">
     </form>
      
 
